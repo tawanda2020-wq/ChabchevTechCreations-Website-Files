@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Novels | Chabchev Tales & Tasks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../styles.css"> <!-- Use your shared stylesheet -->
+
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #ffffff;
+            color: #333;
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #005f6b;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .book-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .book-cover {
+            height: 250px;
+            background: linear-gradient(45deg, #005f6b, #007a8a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 3rem;
+        }
+
+        .book-info {
+            padding: 1.5rem;
+        }
+
+        .book-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #005f6b;
+        }
+
+        .book-description {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .buy-button {
+            background: #ffd700;
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background: #ffed4e;
+        }
+
+        .book-cover {
+            height: 250px;
+            background: #f0f0f0;
+            overflow: hidden;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }          
+    </style>
+</head>
+
+<body>
+
+    <h1 class="section-title">Novels</h1>
+
+    <div class="books-grid">
+        <!-- Book 1 -->
+        <div class="book-card">
+            <div class="book-cover">
+                <img src="haunted wires.jpg" alt="Haunted Wires: Echoes of a Reclaimed Heart">
+              </div>              
+            <div class="book-info">
+                <h3 class="book-title">Haunted Wires: Echoes of a Reclaimed Heart</h3>
+                <p class="book-description">
+                    Tawanda, a tech genius in Harare, built a future with machines—but lost his past in love. When fate
+                    reconnects him with Tariro, he must confront the silence he created. Can a heart once broken find
+                    its signal again?
+                </p>
+                <a href="https://www.amazon.com/dp/B0FBX9MNRX" class="buy-button" target="_blank">Buy on Amazon</a>
+            </div>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="book-card">
+            <div class="book-cover">
+                <img src="nitey eigtht percentage.png" alt="98% Matched: A Love Story in the Age of Algorithms">
+              </div>              
+            <div class="book-info">
+                <h3 class="book-title">98% Matched: A Love Story in the Age of Algorithms</h3>
+                <p class="book-description">
+                    When Matida’s AI dating app matches her with an unpredictable artist, logic is no longer enough. A
+                    witty, heart-driven tale about the limits of code—and the boundless unpredictability of love.
+                </p>
+                <a href="https://www.amazon.com/dp/B0FDH8MK87" class="buy-button" target="_blank">Buy on Amazon</a>
+            </div>
+        </div>
+
+        <!-- More books can be added here -->
+    </div>
+
+    <script>
+        //Disable Right Click
+        document.addEventListener("contextmenu", (event) => event.preventDefault());
+    </script>
+</body>
+
+</html>

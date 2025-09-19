@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tawanda Ronald Munyanyi</title>
+    <meta name="description"
+        content="Chabchev Tales & Tasks - Discover captivating stories that transport you to new worlds">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<!-- POPUP -->
+<div id="popup" style="
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #10B981;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    font-size: 14px;
+"></div>
+
+
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Chabchev Tales & Tasks</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hello, I'm <span class="name">Tawanda Ronald Munyanyi</span>
+                </h1>
+                <p class="hero-subtitle">Romance Author | Tech Visionary | Storyteller</p>
+                <p class="hero-tagline">
+                    I write stories that speak to the soul — blending heartfelt romance, emotional growth, and the
+                    unexpected beauty of life and technology.
+                    Discover the magic in everyday moments, love beyond boundaries, and the power of authentic
+                    connection.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#books" class="btn btn-primary">
+                        <i class="fas fa-book"></i> Read My Books
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        <i class="fas fa-user"></i> About the Author
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="meme.jpg" alt="Tawanda Ronald Munyanyi" class="author-photo">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="section section-alt">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Weaving Romance, Technology & Emotion into Stories That Matter</p>
+            </div>
+            <div class="about-content scroll-animate">
+                <div class="about-image">
+                    <img src="me-me.jpg" alt="Tawanda Ronald Munyanyi at work" class="about-photo">
+                </div>
+                <div class="about-text">
+                    <p>
+                        I’m <strong>Tawanda Ronald Munyanyi</strong>, a Zimbabwean author crafting emotionally-driven
+                        romance stories that resonate deeply. My work blends the rawness of real life with the warmth of
+                        human connection, sometimes with a hint of technology peeking through the narrative.
+                    </p>
+                    <p>
+                        I began writing as a personal outlet — inspired by my own journey, daily observations, and the
+                        untold emotions in the people around me. Now, each novel I write is a piece of my heart and soul
+                        — a window into love, loss, passion, and healing.
+                    </p>
+                    <p>
+                        Outside of writing, I’m an innovator in the tech space — recognized by POTRAZ for engineering
+                        brilliance in Zimbabwe’s ICT Innovation Drive. I believe storytelling and technology are not
+                        separate worlds, but bridges to the future.
+                    </p>
+                    <p>
+                        Whether you're here for the slow burn of a romance or the soul-stirring curve of a plot twist, I
+                        hope you leave each page changed — even just a little.
+                    </p>
+                </div>
+            </div>
+            <div class="stats scroll-animate">
+                <div class="stat">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Books Published</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">300+</span>
+                    <span class="stat-label">Readers Reached</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5.0</span>
+                    <span class="stat-label">Early Reader Rating</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Books Section -->
+    <section id="books" class="section">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2 class="section-title">My Books</h2>
+                <p class="section-subtitle">Stories that blend technology, emotion, and the tender chaos of love</p>
+            </div>
+            <div class="books-grid">
+
+                <!-- Haunted Wires -->
+                <div class="book-card scroll-animate">
+                    <img src="haunted wires.jpg" alt="Haunted Wires" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-genre">Romantic Drama / Tech Fiction</div>
+                        <h3 class="book-title">Haunted Wires: Echoes of a Reclaimed Heart</h3>
+                        <p class="book-description">
+                            Tawanda, a tech genius in Harare, built a future with machines—but lost his past in love.
+                            When fate reconnects him with Tariro, he must confront the silence he created.
+                            Can a heart once broken find its signal again?
+                        </p>
+                        <div class="book-links">
+                            <a href="https://www.amazon.com/dp/B0FBX9MNRX" class="book-link amazon-link"
+                                target="_blank">
+                                <i class="fab fa-amazon"></i> Buy on Amazon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 98% Matched -->
+                <div class="book-card scroll-animate">
+                    <img src="nitey eigtht percentage.png" alt="98% Matched" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-genre">Rom-Com / Tech Romance</div>
+                        <h3 class="book-title">98% Matched: A Love Story in the Age of Algorithms</h3>
+                        <p class="book-description">
+                            When Matida’s AI dating app matches her with an unpredictable artist, logic is no longer
+                            enough.
+                            A witty, heart-driven tale about the limits of code—and the boundless unpredictability of
+                            love.
+                        </p>
+                        <div class="book-links">
+                            <a href="https://www.amazon.com/dp/B0FDH8MK87" class="book-link amazon-link"
+                                target="_blank">
+                                <i class="fab fa-amazon"></i> Buy on Amazon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coming Soon -->
+                <div class="book-card scroll-animate">
+                    <img src="20250618_1609_Soulful Afrofuturistic Journey_simple_compose_01jy1nvkhkf1yr7deq7ahvaxf4.png"
+                        alt="Coming Soon" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-genre">Coming Soon</div>
+                        <h3 class="book-title">[Upcoming Release]</h3>
+                        <p class="book-description">
+                            A new novel is in the works—blending soulful romance and modern dilemmas.
+                            Stay tuned for another emotionally intelligent journey that questions everything you thought
+                            you knew about love.
+                        </p>
+                        <div class="book-links">
+                            <a href="#contact" class="book-link amazon-link">
+                                <i class="fas fa-envelope"></i> Get Notified
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section section-alt">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2 class="section-title">Reader Reviews</h2>
+                <p class="section-subtitle">Thoughts from readers who connected with the stories</p>
+            </div>
+
+            <div class="testimonial-slider scroll-animate">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Haunted Wires made me cry. The emotional depth, the tech-metaphors
+                            for love — pure brilliance."</p>
+                        <div class="testimonial-author">– Rutendo M.</div>
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"98% Matched is like Silicon Valley met Notting Hill. I laughed, I
+                            blushed, I thought deeply."</p>
+                        <div class="testimonial-author">– Chenai R.</div>
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"I didn’t expect to love a story about AI and love this much. 98%
+                            Matched is my new fav romance."</p>
+                        <div class="testimonial-author">– Vanessa T.</div>
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--  Review Submission form, Contact Us Section -->
+    <section class="section">
+        <div class="container dual-form-container">
+
+            <!-- Submit a Review -->
+            <div class="dual-column">
+                <div class="section-header scroll-animate">
+                    <h2 class="section-title">Submit a Review</h2>
+                    <p class="section-subtitle">Share your thoughts about any of my books</p>
+                </div>
+                <form class="review-form scroll-animate" id="reviewForm">
+                    <div class="form-group">
+                        <label for="reviewerName">Your Name</label>
+                        <input type="text" id="reviewerName" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="book">Book Title</label>
+                        <input type="text" id="bookTitle" name="book" class="form-control"
+                            placeholder="e.g. Haunted Wires" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <select id="rating" name="rating" class="form-control" required>
+                            <option value="">Select</option>
+                            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+                            <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+                            <option value="⭐⭐⭐">⭐⭐⭐</option>
+                            <option value="⭐⭐">⭐⭐</option>
+                            <option value="⭐">⭐</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="review">Your Review</label>
+                        <textarea id="review" name="review" class="form-control" rows="5" required></textarea>
+                    </div>
+
+                    <div class="g-recaptcha" data-sitekey="6LeQnmYrAAAAAKzR5pAHjY24XGuxi3LCg0a9Ms-q"></div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-star"></i> Submit Review
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="dual-column" id="contact">
+                <div class="section-header scroll-animate">
+                    <h2 class="section-title">Contact Me</h2>
+                    <p class="section-subtitle">I'd love to hear from you!</p>
+                </div>
+                <form class="contact-form scroll-animate" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                    </div>
+
+                    <div class="g-recaptcha" data-sitekey="6LeQnmYrAAAAAKzR5pAHjY24XGuxi3LCg0a9Ms-q"></div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Social Media Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2 class="section-title">Connect With Me</h2>
+                <p class="section-subtitle">Follow for book updates, behind-the-scenes, and more</p>
+            </div>
+            <div class="social-links scroll-animate">
+                <a href="https://www.amazon.com/author/tawandaronald" class="social-link"
+                    aria-label="Amazon Author Page"><i class="fab fa-amazon"></i></a>
+                <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>
+                &copy; 2025
+                <a href="#"
+                    onclick="window.open('/ctt/ctt.html', 'Chabchev Tales & Tasks', 'width=800,height=600'); return false;">
+                    Chabchev Tales & Tasks
+                </a>. All rights reserved.
+            </p>
+            <p>Crafting stories at the intersection of tech, love, and the human soul.</p>
+            <hr>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#books">Books</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
