@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chabchev Tech Creations | Designing The Digital Experience</title>
+    <meta name="description"
+        content="A partner in Innovative, IoT, AI, and Automation solutions for smarter, connected systems. Chabchev Tech Creations delivers cutting-edge technology solutions.">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        as="style">
+    <link rel="preload" href="ctc logo.png" as="image">
+
+    <!-- Critical CSS - Inline for faster loading -->
+    <style>
+        :root {
+            --primary-green: #95bb30;
+            --primary-blue: #019cde;
+            --dark-bg: #0a0a0a;
+            --light-bg: #fafafa;
+            --text-dark: #1a1a1a;
+            --text-light: #f5f5f5;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+            --gradient-dark: linear-gradient(135deg, #000000, #1a1a1a);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background: var(--dark-bg);
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-dark);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        html {
+            scroll-padding-top: 80px;
+            /* Add this line */
+        }
+    </style>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="ctc logo.png" type="image/webp">
+    <link rel="stylesheet" href="index_style.css">
+</head>
+
+<body>
+    <!-- Optimized Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <svg width="60" height="60" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="25" fill="none" stroke-width="3" stroke="var(--primary-blue)"
+                    stroke-dasharray="40 40" stroke-linecap="round">
+                    <animate attributeName="stroke-dashoffset" values="0;80;0" dur="2s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="30" cy="30" r="15" fill="none" stroke-width="2" stroke="var(--primary-green)"
+                    stroke-dasharray="25 25" stroke-linecap="round">
+                    <animate attributeName="stroke-dashoffset" values="0;-50;0" dur="2s" repeatCount="indefinite" />
+                </circle>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Modern Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="ctc logo.png" alt="CTC" width="40" height="40" loading="eager">
+                <span class="brand-text">Chabchev Tech</span>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#about" class="nav-link" data-section="about">About</a>
+                <a href="#services" class="nav-link" data-section="services">Services</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Events Ticker -->
+    <div class="events-ticker" id="eventsTicker">
+        <div class="ticker-content">
+            <span class="ticker-item">🚀 Autonomous Delivery Robot/Rover - Coming December 2025 with AI, Green Energy &
+                Multi-field Applications</span>
+            <span class="ticker-item">🔥 New IoT Solutions Portfolio Update - 6 Major Projects Completed in Q3
+                2025</span>
+            <span class="ticker-item">💡 Accepting Feature Requests for Autonomous Delivery System - Contact Us on
+                WhatsApp</span>
+        </div>
+    </div>
+
+    <!-- Notification Banner (will show automatically) -->
+    <div class="notification-banner" id="projectNotification">
+        <div class="notification-content-wrapper">
+            <div class="notification-content">
+                <div class="notification-title">
+                    <span>🎯</span>
+                    Latest Projects Update
+                </div>
+                <p class="notification-text">
+                    We've completed 6 major IoT projects in Q3 2025! Check out our Smart Water Metering, Fire Detection,
+                    and
+                    Energy Monitoring systems.
+                    <strong>Autonomous Delivery Robot coming December!</strong>
+                </p>
+                <button class="notification-button" onclick="scrollToSection('projects')">
+                    View Projects
+                </button>
+            </div>
+        </div>
+        <button class="notification-close" onclick="closeNotification()">×</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="floating-elements">
+                <div class="float-element" style="--delay: 0s; --duration: 8s;"></div>
+                <div class="float-element" style="--delay: 2s; --duration: 10s;"></div>
+                <div class="float-element" style="--delay: 4s; --duration: 12s;"></div>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Designing The</span>
+                <span class="title-line gradient-text">Digital Experience</span>
+            </h1>
+            <p class="hero-subtitle">
+                Innovative IoT, AI, and Automation solutions for smarter, connected systems
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="78">0</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="40">0</span>
+                    <span class="stat-label">Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="3">0</span>
+                    <span class="stat-label">Years</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="scrollToSection('services')">
+                    Explore Services
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 3l7 7-7 7-1.4-1.4L14.2 10 8.6 4.4z" />
+                    </svg>
+                </button>
+                <button class="btn btn-outline" onclick="scrollToSection('contact')">
+                    Get In Touch
+                </button>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About <span class="gradient-text">Innovation</span></h2>
+                <p class="section-subtitle">We're a game-changing tech startup building the future</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Pioneering Technology Solutions</h3>
+                        <p>At Chabchev Tech Creations, we harness the power of AI, IoT, and automation to create
+                            intelligent, connected systems that transform businesses and enhance lives.</p>
+                        <p>Our expertise spans embedded systems, machine learning, robotics engineering, and computer
+                            vision, delivering comprehensive solutions tailored to your unique challenges.</p>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">💡</div>
+                            <h4>Innovation First</h4>
+                            <p>Cutting-edge solutions that push boundaries</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🚀</div>
+                            <h4>Future-Ready</h4>
+                            <p>Technologies built for tomorrow's challenges</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h4>Precision Focus</h4>
+                            <p>Tailored solutions for specific needs</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🤝</div>
+                            <h4>Partnership</h4>
+                            <p>Collaborative approach to success</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual">
+                    <div class="tech-showcase">
+                        <div class="tech-item active" data-tech="iot">
+                            <div class="tech-icon">🌐</div>
+                            <h4>IoT Solutions</h4>
+                        </div>
+                        <div class="tech-item" data-tech="ai">
+                            <div class="tech-icon">🧠</div>
+                            <h4>AI Systems</h4>
+                        </div>
+                        <div class="tech-item" data-tech="robotics">
+                            <div class="tech-icon">🤖</div>
+                            <h4>Robotics</h4>
+                        </div>
+                        <div class="tech-item" data-tech="embedded">
+                            <div class="tech-icon">⚡</div>
+                            <h4>Embedded</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="gradient-text">Services</span></h2>
+                <p class="section-subtitle">Comprehensive technology solutions for modern challenges</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-service="iot">
+                    <div class="service-header">
+                        <div class="service-icon">🌐</div>
+                        <h3>IoT & Edge AI</h3>
+                    </div>
+                    <p>Smart device ecosystems with real-time intelligence</p>
+                    <ul class="service-features">
+                        <li>Smart device development</li>
+                        <li>Edge computing solutions</li>
+                        <li>IoT platform integration</li>
+                    </ul>
+                    <div class="service-overlay">
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="ai">
+                    <div class="service-header">
+                        <div class="service-icon">🧠</div>
+                        <h3>AI & Machine Learning</h3>
+                    </div>
+                    <p>Intelligent automation and predictive analytics</p>
+                    <ul class="service-features">
+                        <li>Custom ML algorithms</li>
+                        <li>Predictive analytics</li>
+                        <li>Process automation</li>
+                    </ul>
+                    <div class="service-overlay">
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="robotics">
+                    <div class="service-header">
+                        <div class="service-icon">🤖</div>
+                        <h3>Robotics Engineering</h3>
+                    </div>
+                    <p>Advanced robotic systems and automation</p>
+                    <ul class="service-features">
+                        <li>Autonomous systems</li>
+                        <li>Industrial robotics</li>
+                        <li>Custom solutions</li>
+                    </ul>
+                    <div class="service-overlay">
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="embedded">
+                    <div class="service-header">
+                        <div class="service-icon">⚡</div>
+                        <h3>Embedded Systems</h3>
+                    </div>
+                    <p>Specialized computing for dedicated functions</p>
+                    <ul class="service-features">
+                        <li>Hardware design</li>
+                        <li>Firmware development</li>
+                        <li>Low-power solutions</li>
+                    </ul>
+                    <div class="service-overlay">
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="vision">
+                    <div class="service-header">
+                        <div class="service-icon">👁️</div>
+                        <h3>Computer Vision</h3>
+                    </div>
+                    <p>Visual intelligence for machines</p>
+                    <ul class="service-features">
+                        <li>Object detection</li>
+                        <li>Image recognition</li>
+                        <li>Video analytics</li>
+                    </ul>
+                    <div class="service-overlay">
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="cloud">
+                    <div class="service-header">
+                        <div class="service-icon">☁️</div>
+                        <h3>Cloud Solutions</h3>
+                    </div>
+                    <p>Scalable cloud-based applications</p>
+                    <ul class="service-features">
+                        <li>Cloud architecture</li>
+                        <li>API development</li>
+                        <li>System integration</li>
+                    </ul>
+                    <div class="service-overlay">
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                <p class="section-subtitle">Showcasing innovation in action</p>
+            </div>
+
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="iot">IoT</button>
+                <button class="filter-btn" data-filter="ai">AI</button>
+                <button class="filter-btn" data-filter="robotics">Robotics</button>
+                <button class="filter-btn" data-filter="cloud">Software</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+                <p class="section-subtitle">Ready to bring your vision to life?</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:info@chabchevtech.com">info@chabchevtech.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/+263713422587">+263 713 422 587</a>
+                            <h4>Emergency Call/WhatsApp</h4>
+                            <a href="https://wa.me/+263772890167">+263 772 890 167</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Batanai Gardens, Harare, Zimbabwe</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <a href="https://www.facebook.com/profile.php?id=61551074288182" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+
+                    <div class="form-group">
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Select a Service</option>
+                            <option value="IoT & Edge AI">IoT & Edge AI</option>
+                            <option value="AI & Machine Learning">AI & Machine Learning</option>
+                            <option value="Robotics Engineering">Robotics Engineering</option>
+                            <option value="Embedded Systems">Embedded Systems</option>
+                            <option value="Computer Vision">Computer Vision</option>
+                            <option value="Cloud Solutions">Cloud Solutions</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <label for="subject">Subject</label>
+                    </div>
+
+                    <!-- Hidden when not 'Other' -->
+                    <div class="form-group" id="customSubjectGroup" style="display: none;">
+                        <input type="text" id="customSubject" name="customSubject" placeholder="Please specify" />
+                        <label for="customSubject">Custom Subject</label>
+                    </div>
+
+
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Send Message
+                        <span class="btn-loading">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"
+                                    stroke-dasharray="60" stroke-dashoffset="60">
+                                    <animate attributeName="stroke-dashoffset" values="60;0" dur="1s"
+                                        repeatCount="indefinite" />
+                                </circle>
+                            </svg>
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="ctc logo.png" alt="CTC" width="40" height="40">
+                    <span class="brand-text">Chabchev Tech Creations</span>
+                    <p>Designing The Digital Experience</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Chabchev Tech Creations. All Rights Reserved.</p>
+                <p>
+                    Crafted with ❤️ by
+                    <a href="#"
+                        onclick="window.open('/profile/trmprofile.html', 'TRMProfile', 'width=800,height=600'); return false;">
+                        Tawanda Ronald Munyanyi
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 6l-6 6h4v6h4v-6h4z" />
+        </svg>
+    </button>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="project-modal-content">
+            <div class="project-modal-header">
+                <h3 id="modalProjectTitle" style="margin: 0; color: var(--text-light);"></h3>
+                <button class="project-close-btn" onclick="projectsManager.closeProjectModal()">×</button>
+            </div>
+            <div class="project-modal-body" id="modalProjectBody">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="index_script.js"></script>
+<script>
+    // Hero Section Entry Animation
+    gsap.from(".hero-title", {
+        x: -200,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out"
+    });
+    gsap.from(".hero-subtitle", {
+        y: 50,
+        opacity: 0,
+        delay: 0.5,
+        duration: 1,
+        ease: "power3.out"
+    });
+
+
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const formData = new FormData(this);
+
+        // Show loading state
+        submitBtn.classList.add("loading");
+        submitBtn.disabled = true;
+
+        try {
+            // Extract form data
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+
+            // Specify the recipient's phone number (include country code)
+            const phoneNumber = '263713422587'; // Replace with the actual number
+
+            // Encode the message for the URL
+            const whatsappMessage = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+
+            // Optional: show UI success message
+            this.reset(); // Clear the form
+
+        } catch (error) {
+            console.error("Failed to prepare message:", error);
+            alert("Failed to prepare message. Please try again.");
+        } finally {
+            submitBtn.classList.remove("loading");
+            submitBtn.disabled = false;
+        }
+    });
+
+    function closeNotification() {
+        const notification = document.getElementById('projectNotification');
+        notification.style.display = 'none';
+    }
+
+    function scrollToSection(sectionId) {
+        // Add your scroll logic here
+        console.log('Scrolling to:', sectionId);
+        document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+    }
+
+    // Optional: Auto-close after a certain time
+    setTimeout(() => {
+        const notification = document.getElementById('projectNotification');
+        if (notification) {
+            notification.style.opacity = '0.9';
+        }
+    }, 10000);
+
+</script>
+
+</html>
