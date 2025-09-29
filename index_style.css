@@ -1520,7 +1520,7 @@ p {
   align-items: center;
   height: 60px;
   white-space: nowrap;
-  animation: scrollRight 50s linear infinite;
+  animation: scrollRight 60s linear infinite;
 }
 
 @keyframes scrollRight {
