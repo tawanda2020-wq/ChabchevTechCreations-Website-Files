@@ -1160,3 +1160,31 @@
     initializeApp();
   }
 })();
+
+
+
+
+// Promotional Carousel - Duplicate items for seamless loop
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('promoCarousel');
+    
+    if (carousel) {
+        const cards = Array.from(carousel.children);
+        
+        // Duplicate cards for seamless infinite scroll
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            carousel.appendChild(clone);
+        });
+        
+        // Optional: Adjust animation speed based on number of items
+        const totalWidth = carousel.scrollWidth / 2;
+        const speed = totalWidth / 50; // Adjust divisor for speed (higher = slower)
+        carousel.style.animationDuration = `${speed}s`;
+    }
+});
+
+
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
