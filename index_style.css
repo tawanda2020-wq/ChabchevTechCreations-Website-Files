@@ -1503,119 +1503,204 @@ p {
   transition: transform 0.3s;
 }
 
-
-
 .notification-banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            border-bottom: 2px solid var(--primary-green);
-            z-index: 1000;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border-bottom: 2px solid var(--primary-green);
+  z-index: 1000;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
 
-        .notification-content-wrapper {
-            display: flex;
-            align-items: center;
-            height: 60px;
-            white-space: nowrap;
-            animation: scrollRight 20s linear infinite;
-        }
+.notification-content-wrapper {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  white-space: nowrap;
+  animation: scrollRight 50s linear infinite;
+}
 
-        @keyframes scrollRight {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
+@keyframes scrollRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
-        .notification-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 0 40px;
-            color: #e5e7eb;
-            font-size: 14px;
-            line-height: 1.4;
-        }
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 40px;
+  color: #e5e7eb;
+  font-size: 14px;
+  line-height: 1.4;
+}
 
-        .notification-title {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: bold;
-            color: var(--primary-green);
-        }
+.notification-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: var(--primary-green);
+}
 
-        .notification-title span {
-            font-size: 16px;
-        }
+.notification-title span {
+  font-size: 16px;
+}
 
-        .notification-text {
-            margin: 0;
-        }
+.notification-text {
+  margin: 0;
+}
 
-        .notification-text strong {
-            color: var(--primary-green);
-        }
+.notification-text strong {
+  color: var(--primary-green);
+}
 
-        .notification-button {
-            background: var(--primary-green);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
+.notification-button {
+  background: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
 
-        .notification-button:hover {
-            background: #0d9668;
-            transform: translateY(-1px);
-        }
+.notification-button:hover {
+  background: #0d9668;
+  transform: translateY(-1px);
+}
 
-        .notification-close {
-            position: absolute;
-            top: 50%;
-            right: 15px;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: #9ca3af;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 5px;
-            line-height: 1;
-            transition: color 0.3s ease;
-            z-index: 1001;
-        }
+.notification-close {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+  transition: color 0.3s ease;
+  z-index: 1001;
+}
 
-        .notification-close:hover {
-            color: #f87171;
-        }
+.notification-close:hover {
+  color: #f87171;
+}
 
-        /* Demo content to show the notification in context */
-        .main-content {
-            margin-top: 80px;
-            padding: 40px;
-            color: white;
-            text-align: center;
-        }
+/* Demo content to show the notification in context */
+.main-content {
+  margin-top: 80px;
+  padding: 40px;
+  color: white;
+  text-align: center;
+}
 
-        .main-content h1 {
-            color: var(--primary-green);
-            margin-bottom: 20px;
-        }
+.main-content h1 {
+  color: var(--primary-green);
+  margin-bottom: 20px;
+}
 
-        /* Pause animation on hover (optional) */
-        .notification-banner:hover .notification-content-wrapper {
-            animation-play-state: paused;
-        }
+/* Pause animation on hover (optional) */
+.notification-banner:hover .notification-content-wrapper {
+  animation-play-state: paused;
+}
+
+/* Promotional Carousel Section */
+.promo-carousel-section {
+  padding: 60px 0;
+  background: var(--bg-secondary);
+  overflow: hidden;
+  position: relative;
+}
+
+.promo-carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.promo-carousel-track {
+  display: flex;
+  gap: 30px;
+  /*animation: scroll-left 50s linear infinite;*/ /*Scroll from right to left*/
+   animation: scroll-right 40s linear infinite;  /*Scroll from left to right*/
+  width: max-content;
+}
+
+.promo-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.promo-card {
+  flex-shrink: 0;
+  width: 400px;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--bg-primary);
+}
+
+.promo-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.promo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/*SCROLL from Right to Left*/
+/*@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}*/
+/*SCROLL from Left to Right*/
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .promo-card {
+    width: 300px;
+    height: 210px;
+  }
+
+  .promo-carousel-track {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-card {
+    width: 250px;
+    height: 175px;
+  }
+}
