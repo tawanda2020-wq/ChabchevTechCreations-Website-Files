@@ -1178,7 +1178,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Optional: Adjust animation speed based on number of items
-        const totalWidth = carousel.scrollWidth / 2;
+        const totalWidth = carousel.scrollWidth / 6;
         const speed = totalWidth / 50; // Adjust divisor for speed (higher = slower)
         carousel.style.animationDuration = `${speed}s`;
     }
@@ -1188,3 +1188,4 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
   });
+
