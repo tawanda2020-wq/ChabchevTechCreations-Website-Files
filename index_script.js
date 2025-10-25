@@ -107,6 +107,7 @@
       this.themeToggle = document.getElementById("themeToggle");
 
       this.init();
+      this.loadThemePreference();
     }
 
     init() {
@@ -214,22 +215,41 @@
     }
 
     toggleTheme() {
-      document.documentElement.classList.toggle("light-theme");
-      const isLight =
-        document.documentElement.classList.contains("light-theme");
+      // Toggle the class on document element
+      const htmlElement = document.documentElement;
+      htmlElement.classList.toggle("light-theme");
 
-      // Update theme icon
+      const isLight = htmlElement.classList.contains("light-theme");
+
+      // Update theme icon with smooth transition
       const themeIcon = this.themeToggle.querySelector(".theme-icon");
       if (themeIcon) {
-        themeIcon.textContent = isLight ? "☀️" : "🌙";
+        // Add fade effect
+        themeIcon.style.opacity = "0";
+        setTimeout(() => {
+          themeIcon.textContent = isLight ? "☀️" : "🌙";
+          themeIcon.style.opacity = "1";
+        }, 150);
       }
 
       // Store theme preference
       try {
         localStorage.setItem("theme", isLight ? "light" : "dark");
       } catch (e) {
-        // Fallback if localStorage is not available
         console.log("Theme preference not stored");
+      }
+    }
+
+    loadThemePreference() {
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "light") {
+          document.documentElement.classList.add("light-theme");
+          const themeIcon = this.themeToggle?.querySelector(".theme-icon");
+          if (themeIcon) themeIcon.textContent = "☀️";
+        }
+      } catch (e) {
+        console.log("Could not load theme preference");
       }
     }
   }
@@ -599,7 +619,7 @@
 
       this.init();
     }
-    // image fallback 
+    // image fallback
     checkImageExists(imagePath) {
       return new Promise((resolve) => {
         const img = new Image();
@@ -663,15 +683,24 @@
           ${project.status === "completed" ? "Completed" : "In Progress"}
         </div>
         <div class="project-preview">
-        ${project.images > 0 ? `
-        <img src="images/${projectId}-preview.jpg" alt="${project.title} preview" 
-        style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; display: block;" 
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-        onload="this.nextElementSibling.style.display='none';">
-        <div style="display: flex; align-items: center; justify-content: center; height: 120px; background: var(--glass-bg); color: var(--text-muted); border-radius: 8px;">
+        ${
+          project.images > 0
+            ? `
+        <picture>
+          <source srcset="images/${projectId}-preview.webp" type="image/webp">
+          <img src="images/${projectId}-preview.jpg" alt="${project.title} preview" 
+          style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; display: block;" 
+          loading="lazy"
+          decoding="async"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          onload="this.nextElementSibling.style.display='none';">
+        </picture>
+        <div style="display: none; align-items: center; justify-content: center; height: 120px; background: var(--glass-bg); color: var(--text-muted); border-radius: 8px;">
         📸 ${project.images} Images Available
         </div>
-        ` : `<div style="display: flex; align-items: center; justify-content: center; height: 120px; background: var(--glass-bg); color: var(--text-muted); border-radius: 8px;">🚧 Coming Soon</div>`}
+        `
+            : `<div style="display: flex; align-items: center; justify-content: center; height: 120px; background: var(--glass-bg); color: var(--text-muted); border-radius: 8px;">🚧 Coming Soon</div>`
+        }
         </div>
         <h3 style="color: var(--text-light); margin-bottom: 8px; font-size: 18px;">${
           project.title
@@ -756,14 +785,20 @@
               { length: project.images },
               (_, i) => `
             <div class="project-image" style="position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 16/9;">
-            <img src="images/${projectId}-${i + 1}.jpg" alt="${
-                project.title
-              } image ${i + 1}" 
-            style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;" 
-            onclick="this.requestFullscreen()"
-            onerror="this.parentElement.innerHTML='<div style=\\'display: flex; align-items: center; justify-content: center; height: 100%; background: var(--glass-bg); color: var(--text-muted);\\'>📸 Image ${
-              i + 1
-            }</div>'">
+              <picture>
+                <source srcset="images/${projectId}-${
+                i + 1
+              }.webp" type="image/webp">
+                <img src="images/${projectId}-${i + 1}.jpg" 
+                alt="${project.title} image ${i + 1}" 
+                style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;" 
+                loading="lazy"
+                decoding="async"
+                onclick="this.requestFullscreen()"
+                onerror="this.parentElement.innerHTML='<div style=\\'display: flex; align-items: center; justify-content: center; height: 100%; background: var(--glass-bg); color: var(--text-muted);\\'>📸 Image ${
+                  i + 1
+                }</div>'">
+              </picture>
             </div>
             `
             ).join("")}
@@ -817,7 +852,7 @@
             <p style="color: var(--text-muted); margin-bottom: 16px;">Interested in this solution?</p>
             <button onclick="projectsManager.contactAboutProject('${
               project.title
-            }')" style="background: var(--gradient-primary); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600;">
+            }')" style="background: var(--gradient-primary); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: transform 0.2s ease;">
               Contact Us About This Project
             </button>
           </div>
@@ -1161,31 +1196,39 @@
   }
 })();
 
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.getElementById("promoCarousel");
 
-
-
-// Promotional Carousel - Duplicate items for seamless loop
-document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.getElementById('promoCarousel');
-    
-    if (carousel) {
-        const cards = Array.from(carousel.children);
-        
-        // Duplicate cards for seamless infinite scroll
-        cards.forEach(card => {
-            const clone = card.cloneNode(true);
-            carousel.appendChild(clone);
+  if (carousel) {
+    // Use IntersectionObserver to only animate when visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            carousel.style.animationPlayState = "running";
+          } else {
+            carousel.style.animationPlayState = "paused";
+          }
         });
-        
-        // Optional: Adjust animation speed based on number of items
-        const totalWidth = carousel.scrollWidth / 6;
-        const speed = totalWidth / 50; // Adjust divisor for speed (higher = slower)
-        carousel.style.animationDuration = `${speed}s`;
-    }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(carousel.parentElement);
+
+    // Duplicate cards only once
+    const cards = Array.from(carousel.children);
+    const fragment = document.createDocumentFragment();
+
+    cards.forEach((card) => {
+      const clone = card.cloneNode(true);
+      fragment.appendChild(clone);
+    });
+
+    carousel.appendChild(fragment);
+  }
 });
 
-
-document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-  });
-
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
