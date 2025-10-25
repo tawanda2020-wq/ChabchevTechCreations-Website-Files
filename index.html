@@ -111,9 +111,11 @@
                 <a href="#services" class="nav-link" data-section="services">Services</a>
                 <a href="#projects" class="nav-link" data-section="projects">Projects</a>
                 <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                <!--
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                     <span class="theme-icon">🌙</span>
                 </button>
+                -->
             </div>
 
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -212,31 +214,42 @@
     <section class="promo-carousel-section">
         <div class="container">
             <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">
-                Our <span class="gradient-text">Recent Work</span>
+               <span class="gradient-text"> Our Recent Work</span>
             </h2>
         </div>
         <div class="promo-carousel-container">
             <div class="promo-carousel-track" id="promoCarousel">
-                <!-- Images will be dynamically duplicated for seamless loop -->
+                <!-- Use WebP with PNG fallback -->
                 <div class="promo-card">
-                    <img src="promo results/image1.png" alt="Project showcase 1" loading="lazy">
+                    <picture>
+                        <source srcset="image1.webp" type="image/webp">
+                    </picture>
                 </div>
                 <div class="promo-card">
-                    <img src="promo results/image2.png" alt="Project showcase 2" loading="lazy">
+                    <picture>
+                        <source srcset="image2.webp" type="image/webp">
+                    </picture>
                 </div>
                 <div class="promo-card">
-                    <img src="promo results/image3.png" alt="Project showcase 3" loading="lazy">
+                    <picture>
+                        <source srcset="image3.webp" type="image/webp">
+                    </picture>
                 </div>
                 <div class="promo-card">
-                    <img src="promo results/image4.png" alt="Project showcase 4" loading="lazy">
+                    <picture>
+                        <source srcset="image4.webp" type="image/webp">
+                    </picture>
                 </div>
                 <div class="promo-card">
-                    <img src="promo results/image5.png" alt="Project showcase 5" loading="lazy">
+                    <picture>
+                        <source srcset="image5.webp" type="image/webp">
+                    </picture>
                 </div>
                 <div class="promo-card">
-                    <img src="/promo results/image6.png" alt="Project showcase 6" loading="lazy">
+                    <picture>
+                        <source srcset="image6.webp" type="image/webp">
+                    </picture>
                 </div>
-                <!-- Add more cards as needed -->
             </div>
         </div>
     </section>
