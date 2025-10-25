@@ -48,6 +48,23 @@
   --gradient-dark: linear-gradient(135deg, #000000, #1a1a1a);
 }
 
+/* Light Theme Variables */
+[data-theme="light"],
+.light-theme {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #1a1a1a;
+  --text-secondary: #495057;
+  --text-muted: #6c757d;
+  --border-color: #dee2e6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(0, 0, 0, 0.05);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --input-bg: rgba(0, 0, 0, 0.02);
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+}
 /* Modern Reset */
 *,
 *::before,
@@ -55,6 +72,35 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Update body background for light theme */
+.light-theme body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.light-theme .hero,
+.light-theme .section-dark,
+.light-theme .footer {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.light-theme .navbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.light-theme .nav-link {
+  color: var(--text-primary);
+}
+
+.light-theme .hero-title,
+.light-theme .section-title,
+.light-theme h1, .light-theme h2, .light-theme h3, 
+.light-theme h4, .light-theme h5, .light-theme h6 {
+  color: var(--text-primary);
 }
 
 html {
@@ -1520,7 +1566,7 @@ p {
   align-items: center;
   height: 60px;
   white-space: nowrap;
-  animation: scrollRight 60s linear infinite;
+  animation: scrollRight 50s linear infinite;
 }
 
 @keyframes scrollRight {
@@ -1660,11 +1706,44 @@ p {
   box-shadow: var(--shadow-hover);
 }
 
+/* Improve image loading performance */
+img {
+  content-visibility: auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Prevent layout shift during image load */
+picture {
+  display: block;
+}
+
+.project-preview picture,
+.project-image picture {
+  width: 100%;
+  height: 100%;
+}
+
+/* Smooth image load transition */
+.project-preview img,
+.project-image img {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-preview img[src],
+.project-image img[src] {
+  opacity: 1;
+}
+
 .promo-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /*SCROLL from Right to Left*/
@@ -1703,4 +1782,24 @@ p {
     width: 250px;
     height: 175px;
   }
+}
+
+/* Prevent layout shift during image load */
+.promo-card {
+  position: relative;
+}
+
+.promo-card::before {
+  content: '';
+  display: block;
+  padding-top: 70%; /* 280/400 aspect ratio */
+}
+
+.promo-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
