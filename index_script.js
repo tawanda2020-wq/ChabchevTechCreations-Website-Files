@@ -688,15 +688,15 @@
             ? `
         <picture>
           <source srcset="images/${projectId}-preview.webp" type="image/webp">
-          <img src="images/${projectId}-preview.jpg" alt="${project.title} preview" 
-          style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; display: block;" 
-          loading="lazy"
-          decoding="async"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          onload="this.nextElementSibling.style.display='none';">
+          <img src="images/${projectId}-preview.jpg" 
+               alt="${project.title} preview" 
+               style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; display: block;" 
+               loading="lazy"
+               decoding="async"
+               onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-message').style.display='flex';">
         </picture>
-        <div style="display: none; align-items: center; justify-content: center; height: 120px; background: var(--glass-bg); color: var(--text-muted); border-radius: 8px;">
-        📸 ${project.images} Images Available
+        <div class="fallback-message" style="display: none; align-items: center; justify-content: center; height: 120px; background: var(--glass-bg); color: var(--text-muted); border-radius: 8px;">
+          📸 ${project.images} Images Available
         </div>
         `
             : `<div style="display: flex; align-items: center; justify-content: center; height: 120px; background: var(--glass-bg); color: var(--text-muted); border-radius: 8px;">🚧 Coming Soon</div>`
@@ -1232,4 +1232,3 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
-
