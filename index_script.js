@@ -611,7 +611,7 @@
             "Urban Logistics",
             "Emergency Response",
           ],
-          completionDate: "December 2025",
+          completionDate: "Soon",
           images: 0,
           note: "Open for feature suggestions via WhatsApp!",
         },
@@ -1232,3 +1232,4 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
+
