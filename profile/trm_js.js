@@ -351,6 +351,21 @@ if (copyrightElement) {
 
 // ========== MOBILE NAVIGATION ENHANCEMENTS ==========
 
+// Show hint message on mobile with better visibility
+function showMobileHint() {
+    if (window.innerWidth <= 768) {
+        const contentArea = document.querySelector('.content-area');
+        if (contentArea) {
+            // Force recreate the hint
+            const style = window.getComputedStyle(contentArea, '::before');
+            contentArea.style.animation = 'none';
+            setTimeout(() => {
+                contentArea.style.animation = '';
+            }, 10);
+        }
+    }
+}
+
 // Enhanced mobile navigation indicator
 function updateMobileNavIndicator() {
     if (window.innerWidth <= 768) {
@@ -393,6 +408,7 @@ if ('vibrate' in navigator && window.innerWidth <= 768) {
 // Initialize on load
 document.addEventListener('DOMContentLoaded', function() {
     updateMobileNavIndicator();
+    showMobileHint();
 });
 
 console.log('📱 All loaded!');
