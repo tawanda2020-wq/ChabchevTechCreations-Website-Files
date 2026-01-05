@@ -1069,33 +1069,45 @@ border: 1px solid rgba(255, 255, 255, 0.08);
     overflow-y: auto;
   }
 
-  /* Swipe hint */
+/* Swipe hint - HIGH CONTRAST & PROPER POSITIONING */
   .content-area::before {
-    content: "Swipe left/right or use bottom menu ↓";
+    content: "👆 Swipe or use menu below 👇";
     position: fixed;
-    top: 10px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(16, 185, 129, 0.1);
-    color: var(--primary-color);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    z-index: 100;
-    animation: fadeOut 5s forwards;
+    background: #fbbf24;
+    color: #000000;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    z-index: 1001;
+    animation: fadeOutHint 8s forwards;
     pointer-events: none;
-    border: 1px solid rgba(16, 185, 129, 0.3);
+    border: 2px solid #f59e0b;
+    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.6),
+                0 0 40px rgba(251, 191, 36, 0.3);
+    white-space: nowrap;
+    letter-spacing: 0.5px;
   }
 
-  @keyframes fadeOut {
-    0%, 80% {
+  @keyframes fadeOutHint {
+    0%, 70% {
       opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    90% {
+      opacity: 0.5;
+      transform: translateX(-50%) translateY(-10px);
     }
     100% {
       opacity: 0;
       visibility: hidden;
+      transform: translateX(-50%) translateY(-20px);
     }
   }
+
 
   .section-title {
     font-size: 2rem;
