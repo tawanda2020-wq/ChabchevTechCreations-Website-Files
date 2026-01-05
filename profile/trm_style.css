@@ -1,16 +1,78 @@
 :root {
-  --primary-color: #00d4ff;
-  --secondary-color: #7c3aed;
-  --accent-color: #f59e0b;
-  --dark-bg: #0a0a0f;
-  --darker-bg: #050507;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-border: rgba(0, 212, 255, 0.1);
+  /* Premium Black Theme - Emerald Accent (Recommended) */
+  --card-bg: rgba(255, 255, 255, 0.02); 
+  --card-border: rgba(255, 255, 255, 0.05);
+  --primary-color: #10b981;  
+  --secondary-color: #14b8a6;
+  --accent-color: #06b6d4; 
+  --dark-bg: #000000;
+  --darker-bg: #000000; 
   --text-light: #ffffff;
-  --text-gray: #94a3b8;
-  --text-dim: #64748b;
+  --text-gray: #a1a1aa; 
+  --text-dim: #71717a;
   --success-color: #10b981;
   --warning-color: #f59e0b;
+  --hover-glow: rgba(16, 185, 129, 0.1);
+}
+
+/* Alternative: Pure Black with Ice Blue - Option 2 */
+:root.ice-theme {
+  --primary-color: #06b6d4; /* Cyan - ice blue */
+  --secondary-color: #0ea5e9; /* Sky blue */
+  --accent-color: #22d3ee; /* Light cyan */
+  --dark-bg: #000000;
+  --darker-bg: #000000;
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(6, 182, 212, 0.12);
+  --text-light: #ffffff;
+  --text-gray: #a1a1aa;
+  --text-dim: #71717a;
+  --hover-glow: rgba(6, 182, 212, 0.08);
+}
+
+/* Alternative: Pure Black with Electric Blue - Option 3 */
+:root.electric-theme {
+  --primary-color: #3b82f6; /* Electric blue */
+  --secondary-color: #2563eb; /* Royal blue */
+  --accent-color: #60a5fa; /* Bright blue */
+  --dark-bg: #000000;
+  --darker-bg: #000000;
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(59, 130, 246, 0.12);
+  --text-light: #ffffff;
+  --text-gray: #a1a1aa;
+  --text-dim: #71717a;
+  --hover-glow: rgba(59, 130, 246, 0.1);
+}
+
+/* Alternative: Pure Black with Neon Green - Option 4 (Tesla/Gaming Style) */
+:root.neon-theme {
+  --primary-color: #22c55e; /* Neon green */
+  --secondary-color: #16a34a; /* Forest green */
+  --accent-color: #4ade80; /* Bright green */
+  --dark-bg: #000000;
+  --darker-bg: #000000;
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(34, 197, 94, 0.12);
+  --text-light: #ffffff;
+  --text-gray: #a1a1aa;
+  --text-dim: #71717a;
+  --hover-glow: rgba(34, 197, 94, 0.1);
+}
+
+/* Alternative: Pure Black with Gold - Option 5 (Luxury Style) */
+:root.luxury-theme {
+  --primary-color: #f59e0b; /* Gold */
+  --secondary-color: #d97706; /* Amber */
+  --accent-color: #fbbf24; /* Light gold */
+  --dark-bg: #000000;
+  --darker-bg: #000000;
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(245, 158, 11, 0.12);
+  --text-light: #ffffff;
+  --text-gray: #a1a1aa;
+  --text-dim: #71717a;
+  --hover-glow: rgba(245, 158, 11, 0.08);
 }
 
 * {
@@ -31,7 +93,7 @@ body {
   font-family: "JetBrains Mono", monospace;
 }
 
-/* Enhanced Animated Background */
+/* Premium Black Background */
 .animated-bg {
   position: fixed;
   top: 0;
@@ -39,21 +101,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: radial-gradient(
-      circle at 20% 20%,
-      rgba(0, 212, 255, 0.15) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(124, 58, 237, 0.15) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 60%,
-      rgba(245, 158, 11, 0.08) 0%,
-      transparent 50%
-    );
+  background: #000000;
 }
 
 .animated-bg::before {
@@ -63,17 +111,15 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-      45deg,
-      transparent 30%,
-      rgba(0, 212, 255, 0.02) 50%,
-      transparent 70%
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(16, 185, 129, 0.03) 0%,
+      transparent 50%
     ),
-    linear-gradient(
-      -45deg,
-      transparent 30%,
-      rgba(124, 58, 237, 0.02) 50%,
-      transparent 70%
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(20, 184, 166, 0.03) 0%,
+      transparent 50%
     );
   animation: shimmer 20s ease-in-out infinite;
 }
@@ -88,7 +134,7 @@ body {
   }
 }
 
-/* Grid Pattern Overlay */
+/* Minimal Grid Overlay */
 .animated-bg::after {
   content: "";
   position: absolute;
@@ -96,13 +142,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(
-      rgba(0, 212, 255, 0.03) 1px,
-      transparent 1px
-    ),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 100px 100px;
   animation: grid-float 30s linear infinite;
+  opacity: 0.3;
 }
 
 @keyframes grid-float {
@@ -124,30 +169,26 @@ body {
 }
 
 .portfolio-card {
-  background: var(--card-bg);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(20px);
   border-radius: 24px;
-  border: 1px solid var(--card-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   width: 100%;
   max-width: 1400px;
   height: 90vh;
   max-height: 900px;
   display: flex;
-  overflow: hidden;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  position: relative;
 }
 
 /* Enhanced Sidebar */
 .sidebar {
   width: 320px;
-  background: linear-gradient(145deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+  background: rgba(0, 0, 0, 0.9);
   padding: 30px 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-right: 1px solid var(--card-border);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
 }
 
@@ -164,6 +205,7 @@ body {
     var(--primary-color),
     transparent
   );
+  opacity: 0.5;
 }
 
 .logo {
@@ -364,7 +406,7 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
 }
@@ -532,7 +574,8 @@ body {
   padding: 20px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
 }
 
 .stat-number {
@@ -623,15 +666,11 @@ body {
 }
 
 .skill-category {
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.01)
-  );
+  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -653,8 +692,11 @@ body {
 
 .skill-category:hover {
   transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5),
+              0 0 30px var(--hover-glow);
 }
 
 .skill-icon {
@@ -684,13 +726,13 @@ body {
 }
 
 .skill-tag {
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--primary-color);
   padding: 4px 10px;
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 500;
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Enhanced Portfolio Grid */
@@ -702,16 +744,12 @@ body {
 }
 
 .portfolio-item {
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.02)
-  );
+  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(15px);
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.4s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
 }
 
@@ -731,8 +769,12 @@ body {
 }
 
 .portfolio-item:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+transform: translateY(-12px);
+  background: rgba(255, 255, 255, 0.04);
+border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5),
+              0 0 30px var(--hover-glow);
+  position: relative;
 }
 
 .portfolio-header {
@@ -761,13 +803,13 @@ body {
 }
 
 .tech-tag {
-  background: rgba(124, 58, 237, 0.1);
+  background: rgba(255, 255, 255, 0.02);
   color: var(--secondary-color);
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 0.7rem;
   font-weight: 500;
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .portfolio-links {
@@ -778,13 +820,13 @@ body {
 
 .portfolio-link {
   padding: 8px 16px;
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--primary-color);
   text-decoration: none;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
-  border: 1px solid rgba(0, 212, 255, 0.2);
+border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.3s ease;
 }
 
@@ -802,17 +844,13 @@ body {
 }
 
 .service-card {
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.01)
-  );
+  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 30px;
   text-align: center;
   transition: all 0.4s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
 }
@@ -835,8 +873,10 @@ body {
 
 .service-card:hover {
   transform: translateY(-10px) scale(1.02);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5),
+              0 0 30px var(--hover-glow);
 }
 
 .service-icon {
@@ -865,7 +905,7 @@ body {
   border-radius: 16px;
   padding: 25px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.3s ease;
 }
 
@@ -899,62 +939,216 @@ body {
   color: var(--secondary-color);
 }
 
-/* Responsive Design */
+/* Responsive Design - IMPROVED MOBILE NAVIGATION */
 @media (max-width: 768px) {
+  body {
+    padding-bottom: 70px;
+  }
+
   .portfolio-card {
     flex-direction: column;
     height: 100vh;
+    border-radius: 0;
+    max-height: none;
   }
 
+  /* Fixed bottom navigation */
   .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    flex-direction: row;
-    padding: 15px 20px;
     height: auto;
-    overflow-x: auto;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(20px);
+    border-right: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+    flex-direction: column;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8);
   }
 
-  .profile-section {
-    margin-right: 25px;
-    margin-bottom: 0;
-    min-width: 150px;
+  /* Hide profile section on mobile */
+  .profile-section,
+  .logo,
+  .social-links,
+  .sidebar::before {
+    display: none;
   }
 
+  /* Mobile navigation menu */
   .nav-menu {
     display: flex;
-    gap: 10px;
-    margin-bottom: 0;
-    margin-right: 20px;
-    min-width: 300px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 8px 0;
+    gap: 0;
   }
 
   .nav-item {
-    margin-bottom: 0;
-    white-space: nowrap;
-  }
-
-  .nav-btn {
-    padding: 10px 15px;
-    font-size: 0.8rem;
-  }
-
-  .content-area {
-    padding: 20px;
     flex: 1;
+    margin: 0;
+  }
+
+  /* Mobile navigation buttons */
+  .nav-btn {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 4px;
+    gap: 4px;
+    font-size: 0.7rem;
+    border-radius: 8px;
+    min-height: 60px;
+    transform: none !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+
+  .nav-btn i {
+    margin: 0;
+    font-size: 1.3rem;
+    width: auto;
+    transition: all 0.3s ease;
+  }
+
+  /* Active and hover states */
+  .nav-btn:hover,
+  .nav-btn.active {
+    transform: scale(1.05) !important;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-btn.active {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: none;
+    border-top: 3px solid var(--primary-color);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5),
+                0 0 20px var(--hover-glow);
+    font-weight: 600;
+  }
+
+  .nav-btn.active i {
+    transform: scale(1.2);
+    color: var(--primary-color);
+  }
+
+  /* Bottom indicator line */
+  .nav-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-btn.active::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  /* Touch feedback */
+  .nav-btn:active {
+    transform: scale(0.95) !important;
+  }
+
+  /* Content area adjustments */
+  .content-area {
+    padding: 20px 16px 90px 16px;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+
+  /* Swipe hint */
+  .content-area::before {
+    content: "Swipe left/right or use bottom menu ↓";
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    z-index: 100;
+    animation: fadeOut 5s forwards;
+    pointer-events: none;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+
+  @keyframes fadeOut {
+    0%, 80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 
   .section-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
 
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .skills-grid,
   .portfolio-grid,
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .nav-btn {
+    font-size: 0.65rem;
+    padding: 6px 2px;
+  }
+
+  .nav-btn i {
+    font-size: 1.1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .stat-card {
+    padding: 15px 10px;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
   }
 }
 
