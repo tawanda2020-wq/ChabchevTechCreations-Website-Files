@@ -1,666 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRM - Engineering Tomorrow's Solutions Today</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <title>TRM - Engineering Tomorrow's Solutions</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="trm_style.css">
 </head>
-
 <body>
-
-    <div class="animated-bg"></div>
-
-    <div class="portfolio-container">
-        <div class="portfolio-card">
-            <!-- Enhanced Sidebar -->
-            <div class="sidebar">
-                <div class="logo">T.R.M</div>
-
-                <div class="profile-section">
-                    <div class="profile-container">
-                        <div class="animated-circle"></div>
-                        <img src="tawanda-ronald-munyanyi.jpg" alt="TRM" class="profile-image">
-                    </div>
-                    <div class="profile-name">Tawanda Ronald. Munyanyi</div>
-                    <div class="profile-title">Engineering Solutions Architect</div>
-                    <div class="profile-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Harare, Zimbabwe
-                    </div>
-                </div>
-
-                <div class="nav-menu">
-                    <div class="nav-item">
-                        <button class="nav-btn active" onclick="showSection('home')">
-                            <i class="fas fa-home"></i>
-                            Home
-                        </button>
-                    </div>
-                    <div class="nav-item">
-                        <button class="nav-btn" onclick="showSection('about')">
-                            <i class="fas fa-user-cog"></i>
-                            About
-                        </button>
-                    </div>
-                    <div class="nav-item">
-                        <button class="nav-btn" onclick="showSection('skills')">
-                            <i class="fas fa-microchip"></i>
-                            Expertise
-                        </button>
-                    </div>
-                    <div class="nav-item">
-                        <button class="nav-btn" onclick="showSection('portfolio')">
-                            <i class="fas fa-project-diagram"></i>
-                            Projects
-                        </button>
-                    </div>
-                    <div class="nav-item">
-                        <button class="nav-btn" onclick="showSection('services')">
-                            <i class="fas fa-cogs"></i>
-                            Services
-                        </button>
-                    </div>
-                    <div class="nav-item">
-                        <button class="nav-btn" onclick="showSection('contact')">
-                            <i class="fas fa-envelope"></i>
-                            Contact
-                        </button>
-                    </div>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61551074288182" class="social-link"
-                        target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="http://tiktok.com/@chabchevtechcreations" class="social-link" target="_blank">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                    <a href="mailto:ronaldtmunyanyi@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-
+    <!-- Particle Background -->
+    <div class="particles-container" id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-glitch" data-text="TRM">TRM</div>
+                <span class="logo-subtitle">Engineering Solutions</span>
             </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#about" class="nav-link" data-section="about">About</a>
+                <a href="#expertise" class="nav-link" data-section="expertise">Expertise</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#research" class="nav-link" data-section="research">Research</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-            <!-- Enhanced Content Area -->
-            <div class="content-area">
-                <!-- Home Section -->
-                <div id="home" class="content-section active">
-                    <div class="hero-content">
-                        <h1>Engineering Tomorrow's Solutions Today</h1>
-                        <div class="hero-subtitle">I'm a <span class="typewriter" id="typewriter"></span></div>
-                        <div class="hero-location">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-microchip"></i>
+                    <span>IoT • AI • Edge Computing • Automation</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="gradient-text">Engineering</span>
+                    <span class="hero-title-line">Tomorrow's</span>
+                    <span class="hero-title-line">Solutions</span>
+                </h1>
+                <p class="hero-description">
+                    Bridging hardware and software to create intelligent, autonomous systems. 
+                    Specializing in <strong>AI-powered IoT</strong>, <strong>Edge Computing</strong>, 
+                    and <strong>Industrial Automation</strong> for Zimbabwe and beyond.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="5">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="180">0</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="96">0</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Explore Projects</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Let's Connect</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="tech-orbit">
+                    <div class="orbit-ring orbit-1"></div>
+                    <div class="orbit-ring orbit-2"></div>
+                    <div class="orbit-ring orbit-3"></div>
+                    <div class="orbit-center">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="orbit-node node-1" data-tech="IoT">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="orbit-node node-2" data-tech="AI">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="orbit-node node-3" data-tech="Edge">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="orbit-node node-4" data-tech="Cloud">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get to Know</span>
+                <h2 class="section-title">About TRM</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="profile-card">
+                        <div class="profile-image-wrapper">
+                            <img src="tawanda-ronald-munyanyi.jpg" alt="Tawanda Ronald Munyanyi" class="profile-img">
+                            <div class="status-indicator"></div>
+                        </div>
+                        <h3>Tawanda Ronald Munyanyi</h3>
+                        <p class="profile-title">Engineering Solutions Architect</p>
+                        <div class="profile-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            Zimbabwe-Based Tech Innovator | Founder of Chabchev Tech Creations
+                            Harare, Zimbabwe
                         </div>
-                        <p class="hero-description">
-                            Bridging hardware and software domains to create impactful technological solutions for
-                            real-world challenges across Zimbabwe and beyond.
-                            Specializing in Embedded Systems, IoT, AI, and Full-Stack Development with 5 years of
-                            dedicated freelancing experience.
-                        </p>
-
-                        <div class="hero-stats">
-                            <div class="stat-card">
-                                <div class="stat-number">4+</div>
-                                <div class="stat-label">Years Experience</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">280+</div>
-                                <div class="stat-label">Projects Completed</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">97%</div>
-                                <div class="stat-label">Client Satisfaction</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">24/7</div>
-                                <div class="stat-label">Support Available</div>
-                            </div>
-                        </div>
-
-                        <div class="hero-buttons">
-                            <a href="#" class="btn-primary-custom" onclick="showSection('portfolio')">Explore
-                                Projects</a>
-                            <a href="#" class="btn-outline-custom" onclick="showSection('contact')">Let's Connect</a>
-                            <a href="#" class="btn-outline-custom"
-                                onclick="window.open('/books/trmbooks.html', 'TRMBooks', 'width=800,height=600'); return false;">
-                                My Books
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=61551074288182" target="_blank" class="social-btn">
+                                <i class="fab fa-facebook"></i>
                             </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- About Section -->
-                <div id="about" class="content-section">
-                    <h2 class="section-title">About TRM</h2>
-                    <div style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 20px; font-weight: 600;">
-                        Precision engineering meets innovative technology
-                    </div>
-                    <p class="mb-4" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-gray);">
-                        With 5 years of dedicated freelancing experience since completing my bachelor's degree, I've
-                        established myself as a versatile engineer
-                        capable of navigating the complex intersection of hardware and software. My journey began with a
-                        passion for electronic engineering,
-                        but quickly evolved to encompass the entire technology stack.
-                    </p>
-                    <p class="mb-4" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-gray);">
-                        From embedded systems that power IoT devices to cloud-based AI solutions, I bring a unique
-                        perspective that bridges traditional
-                        engineering with cutting-edge digital innovation. Based in Zimbabwe, I'm committed to
-                        contributing to the local tech ecosystem
-                        while delivering world-class solutions that compete on a global scale.
-                    </p>
-                    <p class="mb-4" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-gray);">
-                        My approach combines technical excellence with practical problem-solving, ensuring every project
-                        delivers measurable impact.
-                        I specialize in creating comprehensive solutions that span from low-level hardware programming
-                        to sophisticated cloud architectures.
-                    </p>
-
-                    <div
-                        style="background: rgba(0, 212, 255, 0.05); border-left: 4px solid var(--primary-color); padding: 20px; border-radius: 8px; margin: 30px 0;">
-                        <h5 style="color: var(--primary-color); margin-bottom: 15px;">
-                            <i class="fas fa-rocket" style="margin-right: 10px;"></i>
-                            Side Projects & Publications
-                        </h5>
-                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                            <a href="#" class="btn-outline-custom"
-                                onclick="window.open('/books/trmbooks.html', 'TRMBooks', 'width=800,height=600'); return false;">
-                                📚 TRM Books
+                            <a href="http://tiktok.com/@chabchevtechcreations" target="_blank" class="social-btn">
+                                <i class="fab fa-tiktok"></i>
                             </a>
-
-                             <a href="#" class="btn-outline-custom"
-                                onclick="window.open('/ctt/ctt.html', 'Chabchev Tales & Tasks', 'width=800,height=600'); return false;">
-                                🎯 Chabchev Tales & Tasks
-                            </a>
-                        </div>
-                    </div>
-
-                    <h4 class="mb-3" style="color: var(--accent-color); margin-top: 40px;">Professional Philosophy</h4>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <div class="skill-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <h5>Innovation-Driven</h5>
-                            <p>Constantly exploring emerging technologies to deliver cutting-edge solutions that push
-                                the boundaries of what's possible.</p>
-                        </div>
-                        <div class="skill-category">
-                            <div class="skill-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h5>Client-Centric</h5>
-                            <p>Building lasting partnerships through transparent communication, reliable delivery, and
-                                exceeding expectations.</p>
-                        </div>
-                        <div class="skill-category">
-                            <div class="skill-icon">
-                                <i class="fas fa-globe-africa"></i>
-                            </div>
-                            <h5>Local Impact, Global Standards</h5>
-                            <p>Contributing to Zimbabwe's tech ecosystem while maintaining international quality and
-                                competitiveness.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skills/Expertise Section -->
-                <div id="skills" class="content-section">
-                    <h2 class="section-title">Technical Expertise</h2>
-                    <div style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 30px; font-weight: 600;">
-                        Comprehensive skill set spanning hardware and software domains
-                    </div>
-
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <div class="skill-icon">
-                                <i class="fas fa-microchip"></i>
-                            </div>
-                            <h5>Embedded Systems</h5>
-                            <p>Deep expertise in microcontroller programming and hardware integration for real-time
-                                applications.</p>
-                            <div class="skill-list">
-                                <span class="skill-tag">Arduino</span>
-                                <span class="skill-tag">ESP32/ESP8266</span>
-                                <span class="skill-tag">STM32</span>
-                                <span class="skill-tag">Raspberry Pi</span>
-                                <span class="skill-tag">C/C++</span>
-                                <span class="skill-tag">Real-time Systems</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-category">
-                            <div class="skill-icon">
-                                <i class="fas fa-wifi"></i>
-                            </div>
-                            <h5>Internet of Things</h5>
-                            <p>Complete IoT ecosystem development from sensors to cloud with robust communication
-                                protocols.</p>
-                            <div class="skill-list">
-                                <span class="skill-tag">MQTT</span>
-                                <span class="skill-tag">LoRa/LoRaWAN</span>
-                                <span class="skill-tag">Bluetooth/WiFi</span>
-                                <span class="skill-tag">Sensor Integration</span>
-                                <span class="skill-tag">Edge Computing</span>
-                                <span class="skill-tag">Protocol Design</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-category">
-                            <div class="skill-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h5>Artificial Intelligence</h5>
-                            <p>Machine learning and AI integration for intelligent automation and data-driven insights.
-                            </p>
-                            <div class="skill-list">
-                                <span class="skill-tag">Machine Learning</span>
-                                <span class="skill-tag">TensorFlow</span>
-                                <span class="skill-tag">Computer Vision</span>
-                                <span class="skill-tag">Data Analysis</span>
-                                <span class="skill-tag">Neural Networks</span>
-                                <span class="skill-tag">OpenCV</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-category">
-                            <div class="skill-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h5>Web & Mobile Development</h5>
-                            <p>Full-stack development with modern frameworks for scalable web and mobile applications.
-                            </p>
-                            <div class="skill-list">
-                                <span class="skill-tag">Vue.js</span>
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">Quasar</span>
-                                <span class="skill-tag">Capacitor</span>
-                                <span class="skill-tag">Ionic</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">MongoDB</span>
-                                <span class="skill-tag">RESTful APIs</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-category">
-                            <div class="skill-icon">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <h5>Industrial Automation</h5>
-                            <p>Smart manufacturing and process control solutions for optimized industrial operations.
-                            </p>
-                            <div class="skill-list">
-                                <span class="skill-tag">Industrial Control</span>
-                                <span class="skill-tag">Process Control</span>
-                                <span class="skill-tag">Robotics</span>
-                                <span class="skill-tag">Smart Manufacturing</span>
-                                <span class="skill-tag">SCADA</span>
-                                <span class="skill-tag">PLC Programming</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-category">
-                            <div class="skill-icon">
-                                <i class="fas fa-cloud"></i>
-                            </div>
-                            <h5>Cloud Computing</h5>
-                            <p>Scalable cloud architectures and DevOps practices for modern application deployment.</p>
-                            <div class="skill-list">
-                                <span class="skill-tag">Azure IoT</span>
-                                <span class="skill-tag">AWS</span>
-                                <span class="skill-tag">DevOps</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">Serverless</span>
-                                <span class="skill-tag">CI/CD</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Section -->
-                <div id="portfolio" class="content-section">
-                    <h2 class="section-title">Featured Projects</h2>
-                    <div style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 30px; font-weight: 600;">
-                        Innovative solutions that bridge hardware and software
-                    </div>
-
-                    <div class="portfolio-grid">
-                        <div class="portfolio-item">
-                            <div class="portfolio-header">
-                                <h4 class="portfolio-title">Smart Agriculture IoT System</h4>
-                                <p class="portfolio-subtitle">Comprehensive IoT solution for precision farming including
-                                    soil monitoring, automated irrigation, and crop health analysis using AI-powered
-                                    computer vision.</p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">ESP32</span>
-                                    <span class="tech-tag">LoRaWAN</span>
-                                    <span class="tech-tag">TensorFlow</span>
-                                    <span class="tech-tag">Vue.js</span>
-                                    <span class="tech-tag">Azure IoT</span>
-                                </div>
-                                <div class="portfolio-links">
-                                    <a href="#" class="portfolio-link">Live Demo</a>
-                                    <a href="#" class="portfolio-link">Source Code</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-item">
-                            <div class="portfolio-header">
-                                <h4 class="portfolio-title">Industrial Automation Dashboard</h4>
-                                <p class="portfolio-subtitle">Real-time monitoring and control system for manufacturing
-                                    processes with predictive maintenance capabilities and comprehensive analytics.</p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">MQTT</span>
-                                    <span class="tech-tag">Node.js</span>
-                                    <span class="tech-tag">MongoDB</span>
-                                    <span class="tech-tag">Chart.js</span>
-                                </div>
-                                <div class="portfolio-links">
-                                    <a href="#" class="portfolio-link">Case Study</a>
-                                    <a href="#" class="portfolio-link">Video Demo</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-item">
-                            <div class="portfolio-header">
-                                <h4 class="portfolio-title">Smart Home Ecosystem</h4>
-                                <p class="portfolio-subtitle">Complete home automation solution with voice control,
-                                    mobile app, energy optimization, and security integration using edge AI processing.
-                                </p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">ESP32</span>
-                                    <span class="tech-tag">Vue.js</span>
-                                    <span class="tech-tag">Ionic</span>
-                                    <span class="tech-tag">C/C++</span>
-                                    <span class="tech-tag">OpenCV</span>
-                                    <span class="tech-tag">Bluetooth</span>
-                                </div>
-                                <div class="portfolio-links">
-                                    <a href="#" class="portfolio-link">Mobile App</a>
-                                    <a href="#" class="portfolio-link">Configuration</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-item">
-                            <div class="portfolio-header">
-                                <h4 class="portfolio-title">AI-Powered Analytics Platform</h4>
-                                <p class="portfolio-subtitle">Machine learning platform for business intelligence with
-                                    real-time data processing, predictive analytics, and interactive visualizations.</p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Python</span>
-                                    <span class="tech-tag">TensorFlow</span>
-                                    <span class="tech-tag">Vue.js</span>
-                                    <span class="tech-tag">Node.js</span>
-                                </div>
-                                <div class="portfolio-links">
-                                    <a href="#" class="portfolio-link">Analytics Demo</a>
-                                    <a href="#" class="portfolio-link">Documentation</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-item">
-                            <div class="portfolio-header">
-                                <h4 class="portfolio-title">Vehicle Tracking & Fleet Management</h4>
-                                <p class="portfolio-subtitle">Comprehensive fleet management solution with GPS tracking,
-                                    fuel monitoring, driver behavior analysis, and maintenance scheduling.</p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">ESP32</span>
-                                    <span class="tech-tag">GPS</span>
-                                    <span class="tech-tag">Vue.js</span>
-                                    <span class="tech-tag">MongoDB</span>
-                                    <span class="tech-tag">Google Maps API</span>
-                                </div>
-                                <div class="portfolio-links">
-                                    <a href="#" class="portfolio-link">Live Tracking</a>
-                                    <a href="#" class="portfolio-link">Mobile App</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-item">
-                            <div class="portfolio-header">
-                                <h4 class="portfolio-title">Health Monitoring Wearable</h4>
-                                <p class="portfolio-subtitle">Advanced wearable device for continuous health monitoring
-                                    with AI-powered anomaly detection and emergency alert system.</p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">nRF52</span>
-                                    <span class="tech-tag">Bluetooth LE</span>
-                                    <span class="tech-tag">Machine Learning</span>
-                                    <span class="tech-tag">Vue.js</span>
-                                    <span class="tech-tag">Cloud Functions</span>
-                                </div>
-                                <div class="portfolio-links">
-                                    <a href="#" class="portfolio-link">Health Dashboard</a>
-                                    <a href="#" class="portfolio-link">Privacy Policy</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Services Section -->
-                <div id="services" class="content-section">
-                    <h2 class="section-title">Services</h2>
-                    <div style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 30px; font-weight: 600;">
-                        Comprehensive technology solutions tailored to your needs
-                    </div>
-
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-microchip"></i>
-                            </div>
-                            <h5>Embedded Systems Development</h5>
-                            <p>Custom embedded solutions for industrial applications, consumer electronics, and IoT
-                                devices. From concept to production-ready systems with optimized performance and
-                                reliability.</p>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-network-wired"></i>
-                            </div>
-                            <h5>IoT Solutions</h5>
-                            <p>End-to-end IoT implementations including sensor networks, data collection, cloud
-                                integration, and real-time monitoring dashboards with scalable architecture.</p>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h5>AI & Machine Learning</h5>
-                            <p>Custom AI solutions including computer vision, predictive analytics, natural language
-                                processing, and intelligent automation systems for various industries.</p>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <h5>Mobile & Web Development</h5>
-                            <p>Full-stack development services including responsive web applications, mobile apps, and
-                                progressive web applications with modern frameworks and best practices.</p>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-industry"></i>
-                            </div>
-                            <h5>Industrial Automation</h5>
-                            <p>Process automation and smart manufacturing solutions to optimize industrial operations,
-                                improve efficiency, and reduce operational costs with modern technology.</p>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-cloud"></i>
-                            </div>
-                            <h5>Cloud Integration</h5>
-                            <p>Cloud architecture design, serverless solutions, and scalable infrastructure for modern
-                                applications with robust security and performance optimization.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Section -->
-                <div id="contact" class="content-section">
-                    <h2 class="section-title">Get In Touch</h2>
-                    <p class="mb-4" style="font-size: 1.1rem; color: var(--text-gray);">
-                        Ready to transform your ideas into innovative solutions? Let's discuss how we can collaborate to
-                        create
-                        impactful technology that drives your business forward.
-                    </p>
-
-                    <div class="contact-info">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <h5>Location</h5>
-                            <p>Batanai Gardens, Zimbabwe<br>
-                                Corner First Street & Jason Moyo Ave<br>
-                                Harare, Zimbabwe</p>
-                        </div>
-
-                        <div class="card contact-card p-3">
-                            <div class="contact-icon mb-2">
+                            <a href="mailto:ronaldtmunyanyi@gmail.com" class="social-btn">
                                 <i class="fas fa-envelope"></i>
-                            </div>
-                            <h5>Email</h5>
-                            <p class="mb-0 text-break">
-                                <a href="mailto:ronaldtmunyanyi@gmail.com">ronaldtmunyanyi@gmail.com</a>
-                            </p>
-                        </div>
-
-
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <h5>Phone</h5>
-                            <p><a href="tel:+263713422587">+263 713 422 587</a></p>
-                        </div>
-
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <h5>Availability</h5>
-                            <p>Mon - Fri: 8:30 AM - 7:30 PM CAT<br>
-                                Response within 24 hours</p>
+                            </a>
                         </div>
                     </div>
-
-                    <div
-                        style="background: rgba(0, 212, 255, 0.05); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 16px; padding: 30px; margin-top: 40px; text-align: center;">
-                        <h4 style="color: var(--primary-color); margin-bottom: 20px;">
-                            <i class="fas fa-handshake" style="margin-right: 10px;"></i>
-                            Let's Build Something Amazing Together
-                        </h4>
-                        <p style="color: var(--text-gray); margin-bottom: 25px; font-size: 1.05rem;">
-                            Whether you need embedded systems development, IoT solutions, AI integration, or full-stack
-                            applications,
-                            I'm here to turn your vision into reality with cutting-edge technology and engineering
-                            excellence.
-                        </p>
-                        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                            <a href="mailto:ronaldtmunyanyi@gmail.com" class="btn-primary-custom">
-                                <i class="fas fa-envelope" style="margin-right: 8px;"></i>
-                                Send Email
+                </div>
+                <div class="about-text">
+                    <p class="lead">
+                        With <strong>5 years of dedicated freelancing experience</strong>, I've established myself 
+                        as a versatile engineer at the intersection of hardware and software, creating intelligent 
+                        systems that transform industries.
+                    </p>
+                    <p>
+                        From embedded systems powering IoT devices to cloud-based AI solutions, I bring a unique 
+                        perspective that bridges traditional engineering with cutting-edge innovation. Based in 
+                        Zimbabwe, I'm committed to advancing the local tech ecosystem while delivering world-class 
+                        solutions.
+                    </p>
+                    <div class="focus-areas">
+                        <h4><i class="fas fa-rocket"></i> Current Focus Areas</h4>
+                        <div class="focus-grid">
+                            <div class="focus-item">
+                                <i class="fas fa-robot"></i>
+                                <div>
+                                    <strong>AI Agents</strong>
+                                    <p>Autonomous systems for intelligent automation</p>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <i class="fas fa-microchip"></i>
+                                <div>
+                                    <strong>Edge Computing</strong>
+                                    <p>Real-time processing at the edge</p>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <i class="fas fa-globe-africa"></i>
+                                <div>
+                                    <strong>Local Innovation</strong>
+                                    <p>Tech solutions for Zimbabwe's challenges</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side-projects">
+                        <h4><i class="fas fa-book"></i> Side Projects</h4>
+                        <div class="project-links">
+                            <a href="/books/trmbooks.html" target="_blank" class="project-link">
+                                <i class="fas fa-book-open"></i>
+                                <span>TRM Books</span>
                             </a>
-                            <a href="tel:+263713422587" class="btn-outline-custom">
-                                <i class="fas fa-phone" style="margin-right: 8px;"></i>
-                                Call Now
+                            <a href="/ctt/ctt.html" target="_blank" class="project-link">
+                                <i class="fas fa-tasks"></i>
+                                <span>Chabchev Tales & Tasks</span>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Technical Arsenal</span>
+                <h2 class="section-title">Core Expertise</h2>
+                <p class="section-description">
+                    Comprehensive skill set spanning hardware, software, and intelligent systems
+                </p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card" data-category="embedded">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Embedded Systems</h3>
+                    <p>Real-time microcontroller programming and hardware integration</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">ESP32/ESP8266</span>
+                        <span class="tech-tag">STM32</span>
+                        <span class="tech-tag">Raspberry Pi</span>
+                        <span class="tech-tag">C/C++</span>
+                        <span class="tech-tag">RTOS</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card" data-category="iot">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Internet of Things</h3>
+                    <p>Complete IoT ecosystems from sensors to cloud</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">MQTT</span>
+                        <span class="tech-tag">LoRa/LoRaWAN</span>
+                        <span class="tech-tag">Bluetooth/WiFi</span>
+                        <span class="tech-tag">Edge Computing</span>
+                        <span class="tech-tag">Protocol Design</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card" data-category="ai">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Machine learning and AI-powered automation</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Neural Networks</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Edge AI</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card" data-category="web">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Full-Stack Development</h3>
+                    <p>Modern web and mobile applications</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Quasar</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">RESTful APIs</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card" data-category="automation">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Industrial Automation</h3>
+                    <p>Smart manufacturing and process control</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">PLC Programming</span>
+                        <span class="tech-tag">SCADA</span>
+                        <span class="tech-tag">Robotics</span>
+                        <span class="tech-tag">Process Control</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card" data-category="cloud">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud & DevOps</h3>
+                    <p>Scalable cloud architectures and CI/CD</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Azure IoT</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">
+                    Innovative solutions bridging hardware and software
+                </p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-btn"><i class="fas fa-code"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">IoT • AI • Agriculture</div>
+                        <h3>Smart Agriculture IoT System</h3>
+                        <p>Precision farming with soil monitoring, automated irrigation, and AI-powered crop health analysis</p>
+                        <div class="project-tech">
+                            <span>ESP32</span>
+                            <span>LoRaWAN</span>
+                            <span>TensorFlow</span>
+                            <span>Vue.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-btn"><i class="fas fa-video"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Automation • Analytics</div>
+                        <h3>Industrial Automation Dashboard</h3>
+                        <p>Real-time monitoring with predictive maintenance and comprehensive analytics</p>
+                        <div class="project-tech">
+                            <span>MQTT</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Chart.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-btn"><i class="fas fa-mobile-alt"></i></a>
+                                <a href="#" class="project-btn"><i class="fas fa-cog"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">IoT • Edge AI</div>
+                        <h3>Smart Home Ecosystem</h3>
+                        <p>Complete automation with voice control, mobile app, and edge AI processing</p>
+                        <div class="project-tech">
+                            <span>ESP32</span>
+                            <span>Vue.js</span>
+                            <span>OpenCV</span>
+                            <span>Bluetooth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-btn"><i class="fas fa-chart-line"></i></a>
+                                <a href="#" class="project-btn"><i class="fas fa-book"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">AI • Analytics</div>
+                        <h3>AI-Powered Analytics Platform</h3>
+                        <p>Real-time data processing with predictive analytics and interactive visualizations</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>Vue.js</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-btn"><i class="fas fa-map-marked-alt"></i></a>
+                                <a href="#" class="project-btn"><i class="fas fa-mobile-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">IoT • Fleet Management</div>
+                        <h3>Vehicle Tracking System</h3>
+                        <p>GPS tracking, fuel monitoring, and driver behavior analysis</p>
+                        <div class="project-tech">
+                            <span>ESP32</span>
+                            <span>GPS</span>
+                            <span>Vue.js</span>
+                            <span>Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-btn"><i class="fas fa-heartbeat"></i></a>
+                                <a href="#" class="project-btn"><i class="fas fa-shield-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Wearable • AI</div>
+                        <h3>Health Monitoring Wearable</h3>
+                        <p>Continuous health monitoring with AI-powered anomaly detection</p>
+                        <div class="project-tech">
+                            <span>nRF52</span>
+                            <span>BLE</span>
+                            <span>ML</span>
+                            <span>Cloud</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Innovation</span>
+                <h2 class="section-title">Research & Exploration</h2>
+                <p class="section-description">
+                    Pioneering the future of intelligent, autonomous systems
+                </p>
+            </div>
+            <div class="research-grid">
+                <div class="research-card featured">
+                    <div class="research-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Agents & Autonomous Systems</h3>
+                    <p>
+                        Exploring intelligent agents that can perceive, reason, and act autonomously 
+                        in complex environments. Focus on multi-agent systems, decision-making algorithms, 
+                        and real-world applications in Zimbabwe's industries.
+                    </p>
+                    <div class="research-tags">
+                        <span>Reinforcement Learning</span>
+                        <span>Multi-Agent Systems</span>
+                        <span>Autonomous Decision Making</span>
+                    </div>
+                </div>
+
+                <div class="research-card featured">
+                    <div class="research-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Edge Computing & Edge AI</h3>
+                    <p>
+                        Investigating low-latency, distributed computing paradigms for processing data 
+                        at the edge. Implementing machine learning models on resource-constrained devices 
+                        for real-time intelligence without cloud dependency.
+                    </p>
+                    <div class="research-tags">
+                        <span>TinyML</span>
+                        <span>Model Optimization</span>
+                        <span>Distributed Systems</span>
+                    </div>
+                </div>
+
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>Local Tech Innovation</h3>
+                    <p>
+                        Developing practical technology solutions addressing Zimbabwe's unique challenges 
+                        in agriculture, manufacturing, and infrastructure.
+                    </p>
+                </div>
+
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Federated Learning</h3>
+                    <p>
+                        Privacy-preserving machine learning for distributed IoT networks, enabling 
+                        collaborative intelligence without centralized data collection.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Let's Connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">
+                    Ready to transform your ideas into intelligent solutions?
+                </p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>Location</h4>
+                        <p>Batanai Gardens<br>Corner First Street & Jason Moyo Ave<br>Harare, Zimbabwe</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:ronaldtmunyanyi@gmail.com">ronaldtmunyanyi@gmail.com</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+263713422587">+263 772 890 167</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Availability</h4>
+                        <p>Mon - Fri: 8:30 AM - 7:30 PM CAT<br>Response within 24 hours</p>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <h3>Let's Build Something Amazing</h3>
+                    <p>
+                        Whether you need embedded systems, IoT solutions, AI integration, or industrial automation, 
+                        I'm here to turn your vision into reality with cutting-edge technology.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="mailto:ronaldtmunyanyi@gmail.com" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            <span>Send Email</span>
+                        </a>
+                        <a href="tel:+263713422587" class="btn btn-secondary">
+                            <i class="fas fa-phone"></i>
+                            <span>Call Now</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-glitch" data-text="TRM">TRM</div>
+                    <p>Engineering Tomorrow's Solutions</p>
+                </div>
+                <div class="footer-links">
+                    <a href="/books/trmbooks.html" target="_blank">TRM Books</a>
+                    <a href="/ctt/ctt.html" target="_blank">Chabchev Tales & Tasks</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=100094120187362" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="http://tiktok.com/@chabchevtechcreations" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:ronaldtmunyanyi@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TRM - Tawanda Ronald Munyanyi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="trm_js.js"></script>
-
-    <style>
-        /* Additional accessibility styles */
-        .keyboard-navigation *:focus {
-            outline: 2px solid var(--primary-color);
-            outline-offset: 2px;
-        }
-
-        /* Enhanced hover effects */
-        @media (hover: hover) {
-            .portfolio-item:hover .tech-tag {
-                transform: scale(1.05);
-            }
-
-            .skill-category:hover .skill-tag {
-                background: rgba(0, 212, 255, 0.2);
-                border-color: rgba(0, 212, 255, 0.4);
-            }
-        }
-
-        /* Print styles */
-        @media print {
-
-            .animated-bg,
-            .sidebar,
-            .social-links {
-                display: none;
-            }
-
-            .portfolio-card {
-                box-shadow: none;
-                border: none;
-            }
-
-            .content-area {
-                padding: 0;
-            }
-
-            .content-section {
-                display: block !important;
-                page-break-after: always;
-            }
-        }
-
-        /* Reduced motion accessibility */
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-
-            .typewriter::after {
-                animation: none;
-            }
-        }
-    </style>
 </body>
-
 </html>
