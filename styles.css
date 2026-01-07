@@ -779,6 +779,55 @@ img, video {
 }
 
 /* ========================================
+   FOOTER CREDIT - Engineered by TAWANDA RONALD MUNYANYI
+   ======================================== */
+
+.footer-credit {
+    margin-top: 0.6rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-credit span {
+    margin-right: 4px;
+}
+
+/* Tawanda Ronald Munyanyi Link Styling */
+.trm-link {
+    position: relative;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--primary-green);
+    transition: var(--transition);
+}
+
+/* Glow + lift micro-animation */
+.trm-link:hover {
+    color: var(--primary-blue);
+    text-shadow: 
+        0 0 8px rgba(126, 190, 78, 0.6),
+        0 0 16px rgba(19, 95, 162, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Animated gradient underline */
+.trm-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.4s ease;
+}
+
+.trm-link:hover::after {
+    width: 100%;
+}
+
+/* ========================================
    ANIMATIONS
    ======================================== */
 
